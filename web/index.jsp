@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>University-Industry</title>
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link href="css/prettyPhoto.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet" />	
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <header>		
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="navigation">
+                    <div class="container">					
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <div class="navbar-brand">
+                                <a href="index.html"><h1><span>Event</span>Hub</h1></a>
+                            </div>
+                        </div>
+
+                        <div class="navbar-collapse collapse">							
+                            <div class="menu">
+                                <%@include file="_menu_pre.jsp" %>
+                            </div>
+                        </div>						
+                    </div>
+                </div>	
+            </nav>		
+        </header>
+
+        <section id="main-slider" class="no-margin">
+            <div class="carousel slide">      
+                <div class="carousel-inner">
+                    <div class="item active" style="background-image: url(images/slider/bg1.jpg)">
+                        <div class="container">
+                            <div class="row slide-margin">
+                                <div class="col-sm-6">
+                                    <div class="carousel-content">
+                                        <h2 class="animation animated-item-1">Welcome <span>EventHub</span></h2>
+                                        <p class="animation animated-item-2">Connecting Universities and Industries to 
+                                            drive Innovation...</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 hidden-xs animation animated-item-4">
+                                    <div class="slider-img">
+                                        <img src="images/slider/img3.png" class="img-responsive">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div><!--/.item-->             
+                </div><!--/.carousel-inner-->
+            </div><!--/.carousel-->
+        </section><!--/#main-slider-->
+
+        <div class="feature">
+            <div class="container">
+                <div class="text-center">
+                    <div class="col-md-3">
+                        <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms" >
+                            <i class="fa fa-book"></i>	
+                            <h2>Student Familiarity</h2>
+                            <p>University students can gain the resources help they need in proceeding their educationaal requirements.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms" >
+                            <i class="fa fa-laptop"></i>	
+                            <h2>Company Collaboration</h2>
+                            <p>University technologies recieve engagement from companies interested in collaboration</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms" >
+                            <i class="fa fa-heart-o"></i>	
+                            <h2>University- Industry introductions</h2>
+                            <p>Facilitaing 1000s of graduates and undergraduates meet the industry.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms" >
+                            <i class="fa fa-cloud"></i>	
+                            <h2>International Exposure</h2>
+                            <p>Since we have partnership with leading companies world wide we are able of getting university students through international industry.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about">
+            <div class="container">
+                <div class="col-md-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms" >
+                    <h2>about us</h2>
+                    <img src="images/6.jpg" class="img-responsive"/>
+                    <p> We showcase the best commercially-available academic research from leading universities around the world and curate them in an easy-to-use online platform.<br>
+                        Using our natural language processing engine and smart-matching algorithms we’re able to match university technologies with the most relevant individuals in companies, based on their specific needs and requirements.
+                    </p>
+                </div>
+
+                <div class="col-md-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms" >
+                    <h2>Our intelligent matchmaking platform simplifies the initial connection for successful partnerships between universities and Industries.</h2>
+                    <p>Students who enter universities after finishing their secondary education face hard to get to know the industry.
+                        We give a support to identify the industry and to get the job opportunities to the graduates and undergraduates.</p>
+                    <p> Orgnizing events is a risky purpose for undergraduates who does not have industrial exporsure. 
+                        We provide the best help they would get when dealing with the leading companies in the industry.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="lates">
+                <div class="container">
+                        <div class="text-center">
+                                <h2>Lates News</h2>
+                        </div>
+                        <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                                <img src="images/4.jpg" class="img-responsive"/>
+                                <h3>Template built with Twitter Bootstrap</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum erat 
+                                libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque
+                                libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque
+                                libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque
+                                </p>
+                        </div>
+                        
+                        <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                                <img src="images/4.jpg" class="img-responsive"/>
+                                <h3>Template built with Twitter Bootstrap</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum erat 
+                                libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque
+                                libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque
+                                libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque
+                                </p>
+                        </div>
+                        
+                        <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">				
+                                <img src="images/4.jpg" class="img-responsive"/>
+                                <h3>Template built with Twitter Bootstrap</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum erat 
+                                libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque
+                                libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque
+                                libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque
+                                </p>
+                        </div>
+                </div>
+        </div>-->
+
+        <section id="partner">
+            <div class="container">
+                <div class="center wow fadeInDown">
+                    <h2>Our Partners</h2>
+                    <p>We are in partnership with leading companies in the industry <br> and all renowed universities in Sri Lanka</p>
+                </div>    
+
+                <div class="partners">
+                    <ul>
+                        <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms" src="images/partners/partner1.png"></a></li>
+                        <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms" src="images/partners/partner2.png"></a></li>
+                        <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms" src="images/partners/partner3.png"></a></li>
+                        <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms" src="images/partners/partner4.png"></a></li>
+                        <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1500ms" src="images/partners/partner5.png"></a></li>
+                    </ul>
+                </div>        
+            </div><!--/.container-->
+        </section><!--/#partner-->
+
+
+
+        <footer>
+            <div class="footer">
+                <div class="container">
+                    <div class="social-icon">
+                        <div class="col-md-4">
+                            <ul class="social-network">
+                                <li><a href="#" class="fb tool-tip" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#" class="twitter tool-tip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="gplus tool-tip" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#" class="linkedin tool-tip" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#" class="ytube tool-tip" title="You Tube"><i class="fa fa-youtube-play"></i></a></li>
+                            </ul>	
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-md-offset-4">
+                        <div class="copyright">
+                            &copy; CodeOn 2018. All Rights Reserved.
+                        </div>
+                        <!-- 
+                            All links in the footer should remain intact. 
+                            Licenseing information is available at: http://bootstraptaste.com/license/
+                            You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Company
+                        -->
+                    </div>						
+                </div>
+
+                <div class="pull-right">
+                    <a href="#home" class="scrollup"><i class="fa fa-angle-up fa-3x"></i></a>
+                </div>		
+            </div>
+        </footer>
+
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="js/jquery-2.1.1.min.js"></script>	
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.prettyPhoto.js"></script>
+        <script src="js/jquery.isotope.min.js"></script>  
+        <script src="js/wow.min.js"></script>
+        <script src="js/functions.js"></script>
+
+    </body>
+</html>
