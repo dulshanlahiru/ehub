@@ -8,6 +8,22 @@
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>eh.user.login.LoginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoadHomeServlet</servlet-name>
+        <servlet-class>eh.servelt.home.LoadHomeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoadAddEventServlet</servlet-name>
+        <servlet-class>eh.servelt.event.LoadAddEventServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddEventServlet</servlet-name>
+        <servlet-class>eh.servelt.event.AddEventServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>eh.user.login.LogoutServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/RegisterServlet</url-pattern>
@@ -15,6 +31,22 @@
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadHomeServlet</servlet-name>
+        <url-pattern>/LoadHomeServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadAddEventServlet</servlet-name>
+        <url-pattern>/LoadAddEventServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddEventServlet</servlet-name>
+        <url-pattern>/AddEventServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
