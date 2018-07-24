@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eh.user.login;
+package eh.servelt.event;
 
 import eh.bean.event.EventBean;
 import eh.bean.user.UserBean;
 import eh.businesslogic.event.EventLogic;
-import eh.businesslogic.user.UserLogic;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -26,7 +24,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author grdul
  */
-public class LoginServlet extends HttpServlet {
+public class AddEventServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,44 +40,33 @@ public class LoginServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            System.out.println("servlet->LoginServlet");
+            System.out.println("servlet->AddEventServlet");
             RequestDispatcher rd = null;
 
-            String user = request.getParameter("email");
+            HttpSession session = request.getSession(false);
+            UserBean login = (UserBean) session.getAttribute("currentuser");
+            
+            
+            
+            System.out.println("uni_org_id:"+login.getUni_org_id());
 
-            UserBean userBean = new UserBean();
-            userBean.setEmail_address(request.getParameter("email"));
-            userBean.setPword(request.getParameter("pword"));
+            //collect the input from page
+            EventBean eventBean = new EventBean();
+            //insert into database `eh_event_calender``eh_event_calender`
+            eventBean.setEvent_name(request.getParameter("event_name"));
+            eventBean.setEnvent_id(Integer.parseInt(request.getParameter("envent_id")));
+            eventBean.setEvent_datetime(request.getParameter("event_datetime"));
+            eventBean.setComment(request.getParameter("comment"));
+            eventBean.setUni_org_id(login.getUni_org_id());
+            
+            new EventLogic().setEvent(eventBean);
 
-            UserBean login = new UserLogic().getLogin(userBean);
+            request.setAttribute("msg", "<p class=\"bg-success\">New Event Created</p>");
 
-            if (login != null) {
-
-                HttpSession session = request.getSession(true);
-                session.setAttribute("currentuser", login);
-                
-                switch (login.getUni_org_type()) {
-                    case "UNIVERSITY":
-                        rd = request.getRequestDispatcher("/home-university.jsp");
-                        List<EventBean> userEventList = new EventLogic().getUserEventList(login.getUni_org_id());
-                        request.setAttribute("userEventList", userEventList);
-                        break;
-                    case "ORGANIZATION":
-                        rd = request.getRequestDispatcher("/home-organization.jsp");
-                        break;
-
-                }
-
-            } else {
-                System.err.println("invalid username or password");
-                request.setAttribute("msg", "Invalid username or password");
-                rd = request.getRequestDispatcher("/login.jsp");
-            }
-
-//              rd = request.getRequestDispatcher("/event.jsp");
+            rd = request.getRequestDispatcher("/add-event.jsp");
             rd.forward(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AddEventServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

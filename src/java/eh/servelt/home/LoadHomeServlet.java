@@ -3,12 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eh.user.login;
+package eh.servelt.home;
 
 import eh.bean.event.EventBean;
 import eh.bean.user.UserBean;
 import eh.businesslogic.event.EventLogic;
-import eh.businesslogic.user.UserLogic;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -26,7 +25,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author grdul
  */
-public class LoginServlet extends HttpServlet {
+public class LoadHomeServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,47 +39,24 @@ public class LoginServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+       try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            System.out.println("servlet->LoginServlet");
+            System.out.println("servlet->RegisterServlet");
             RequestDispatcher rd = null;
-
-            String user = request.getParameter("email");
-
-            UserBean userBean = new UserBean();
-            userBean.setEmail_address(request.getParameter("email"));
-            userBean.setPword(request.getParameter("pword"));
-
-            UserBean login = new UserLogic().getLogin(userBean);
-
-            if (login != null) {
-
-                HttpSession session = request.getSession(true);
-                session.setAttribute("currentuser", login);
-                
-                switch (login.getUni_org_type()) {
-                    case "UNIVERSITY":
-                        rd = request.getRequestDispatcher("/home-university.jsp");
-                        List<EventBean> userEventList = new EventLogic().getUserEventList(login.getUni_org_id());
+            
+            HttpSession session = request.getSession(false);
+            UserBean login = (UserBean) session.getAttribute("currentuser");
+            
+            List<EventBean> userEventList = new EventLogic().getUserEventList(login.getUni_org_id());
                         request.setAttribute("userEventList", userEventList);
-                        break;
-                    case "ORGANIZATION":
-                        rd = request.getRequestDispatcher("/home-organization.jsp");
-                        break;
-
-                }
-
-            } else {
-                System.err.println("invalid username or password");
-                request.setAttribute("msg", "Invalid username or password");
-                rd = request.getRequestDispatcher("/login.jsp");
-            }
-
-//              rd = request.getRequestDispatcher("/event.jsp");
-            rd.forward(request, response);
+            
+            
+           rd = request.getRequestDispatcher("/home-university.jsp");
+           rd.forward(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LoadHomeServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
